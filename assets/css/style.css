@@ -1,0 +1,190 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #271919;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.whole-board {
+    height: 584px;
+    width: 584px;
+    margin-top: 5px;
+    border: 1px solid;
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.copy-board {
+    height: 584px;
+    width: 584px;
+    margin-top: 5px;
+    border: 1px solid;
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    rotate: 180deg;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.square {
+    display: flex;
+    height: 73px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.light-square {
+    background-color: lightgreen;
+}
+
+.dark-square {
+    background-color: brown;
+}
+
+.chess-piece {
+    width: 60px;
+}
+.copy-board .chess-piece {
+    rotate: 180deg;
+} 
+
+.possible-move {
+    width: 27px;
+    height: 27px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.275);
+    display: none;
+}
+
+.takes-circle {
+    width: 100%;
+    height: 100%;
+    border: 7px solid rgba(0, 0, 0, 0.275);
+    border-radius: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    display: none;
+}
+
+.check-circle {
+    width: 100%;
+    height: 100%;
+    border: 7px solid red;
+    /* border-radius: 100%; */
+    box-sizing: border-box;
+    position: absolute;
+    display: none;
+}
+.visible {
+    display: block;
+}
+
+.infos {
+    background-color: #98666680;
+    width: 110px;
+    height: 584px;
+    margin-top: 5px;
+    padding-top: 30px;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 10px;
+}
+
+.turn {
+    font-size: 28px;
+    display: flex;
+    text-align: center;
+    font-family: Algerian;
+}
+
+.taken-pieces-container {
+    height: 480px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.203);
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.white-taken, .black-taken {
+    flex: 1;
+}
+.black-taken {
+    margin-left: 10px;
+}
+
+.taken-piece {
+    width: 28px;
+}
+
+.selected-piece {
+    background-color: #ffff5d;
+}
+
+.white-won, .black-won {
+    font-family: Algerian;
+    position: fixed;
+    width: 400px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 200px;
+    left: 470px;
+    font-size: 25px;
+    z-index: 100;
+    color: blue;
+    background-color: white;
+    border-radius: 20px;
+    display: none;
+}
+
+.black-won {
+    background-color: black;
+}
+
+.dimmer {
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.531);
+    position: fixed;
+    z-index: 99;
+    display: none;
+    animation: forwards;
+}
+
+.promote-to {
+    width: 400px;
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    position: fixed;
+    z-index: 100;
+    top: 200px;
+    left: 325px;
+    display: none;
+}
+
+.promotion-piece {
+    flex: 1;
+    height: 100px;
+    border: 1px solid rgb(207, 171, 171);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-collapse: collapse;
+}
+
+.promotion-piece img {
+    width: 50px;
+}

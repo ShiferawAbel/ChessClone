@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/chessPieces/whiteknight.png" type="image/x-icon">
+    <script src="assets/js/preConfig.js" defer></script>
+    <script src="assets/js/pawnPromotionModule.js" defer></script>
+    <script src="assets/js/clickHandler.js" defer></script>
+    <script src="assets/js/tools.js" defer></script>
+    <script src="assets/js/pieceMovements.js" defer></script>
+    <script src="assets/js/kingSafety.js" defer></script>
+    <script src="assets/js/checkMate.js" defer></script>
+    <title>CHESSitout</title>
+</head>
+<body>
+    <div class="container">
+        <audio id="move-self" src="assets/sound-effects/move-self.mp3"></audio>
+        <audio id="capture-sound" src="assets/sound-effects/capture.mp3"></audio>
+        <audio id="checkmate-sound" src="assets/sound-effects/checkmate.mp3"></audio>
+        <audio id="check-sound" src="assets/sound-effects/check.mp3"></audio>
+        <div class="promote-to" id="white-promote-to">
+            <div class="promotion-piece" onclick="pawnPromotion('queen')" id="whitequeen"><img src="assets/chessPieces/whitequeen.png" alt=""></div>
+            <div class="promotion-piece" onclick="pawnPromotion('rook')" id="whiterook"><img src="assets/chessPieces/whiterook.png" alt=""></div>
+            <div class="promotion-piece" onclick="pawnPromotion('knight')" id="whiteknight"><img src="assets/chessPieces/whiteknight.png" alt=""></div>
+            <div class="promotion-piece" onclick="pawnPromotion('bishop')" id="whitebishop"><img src="assets/chessPieces/whitedarkbishop.png" alt=""></div>
+        </div>
+        <div class="promote-to" id="black-promote-to">
+            <div class="promotion-piece" onclick="pawnPromotion('queen')" id="blackqueen"><img src="assets/chessPieces/blackqueen.png" alt=""></div>
+            <div class="promotion-piece" onclick="pawnPromotion('rook')" id="blackrook"><img src="assets/chessPieces/blackrook.png" alt=""></div>
+            <div class="promotion-piece" onclick="pawnPromotion('knight')" id="blackknight"><img src="assets/chessPieces/blackknight.png" alt=""></div>
+            <div class="promotion-piece" onclick="pawnPromotion('bishop')" id="blackbishop"><img src="assets/chessPieces/blackdarkbishop.png" alt=""></div>
+        </div>
+        <div class="dimmer" id="dimmer"></div>
+        <div class="white-won" id="white-won">
+            <h1>VICTORY FOR WHITE</h1>
+        </div>
+        <div class="black-won" id="black-won">
+            <h1>VICTORY FOR BLACK</h1>
+        </div>
+        <div class="whole-board" id="whole-board">
+           
+        </div>
+        <div class="infos" id="infos">
+            <div class="turn" id="turn">White's Turn</div>
+            <div class="taken-pieces-container">
+                <div class="black-taken" id="black-taken">
+
+                </div>
+                <div class="white-taken" id="white-taken">
+                </div>
+            </div>
+        </div>
+        <div class="copy-board" id="copy-board">
+           
+        </div>
+
+    </div>
+</body>
+</html>
